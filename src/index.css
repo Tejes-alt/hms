@@ -1,0 +1,481 @@
+/* ======================================================
+   HOSPITAL DESIGN SYSTEM
+====================================================== */
+:root {
+  --bg-app: #f6f9fc;
+  --bg-surface: #ffffff;
+  --bg-header: #0b3c49;
+  --bg-sidebar: #072e3a;
+
+  --primary: #0ea5a5;
+  --primary-dark: #0284c7;
+
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --text-light: #e6fffa;
+
+  --border: #e2e8f0;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  --shadow-soft: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+/* ======================================================
+   RESET
+====================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg-app);
+  color: var(--text-main);
+  min-height: 100vh;
+}
+
+/* ======================================================
+   LAYOUT
+====================================================== */
+.container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "menu pbody"
+    "footer footer";
+  grid-template-columns: 260px 1fr;
+  grid-template-rows: 70px 1fr 44px;
+  height: 100vh;
+}
+
+/* ======================================================
+   HEADER
+====================================================== */
+.header {
+  grid-area: header;
+  background: var(--bg-header);
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+}
+
+.header h1 {
+  font-size: 30px;
+  font-weight: 600;
+  font-family:'Times New Roman', Times, serif
+}
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-btn {
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+}
+
+.login-btn {
+  background: transparent;
+  color: var(--text-light);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.signup-btn {
+  background: var(--primary);
+  color: #042f2e;
+}
+
+/* ======================================================
+   SIDEBAR
+====================================================== */
+.menu {
+  grid-area: menu;
+  background: var(--bg-sidebar);
+  padding: 26px 18px;
+  color: var(--text-light);
+
+}
+
+.menu h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #99f6e4;
+  margin-bottom: 18px;
+}
+
+.menu ul {
+  list-style: none;
+}
+
+.menu ul li a {
+  display: block;
+  padding: 12px 14px;
+  margin-bottom: 6px;
+  border-radius: var(--radius-sm);
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 17px;
+  font-family:'Times New Roman', Times, serif;
+}
+
+.menu ul li a:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+.menu ul li a.active {
+  background: var(--primary);
+  color: #042f2e;
+  font-weight: 600;
+}
+
+/* ======================================================
+   PAGE BODY
+====================================================== */
+.pbody {
+  grid-area: pbody;
+  padding: 36px;
+  overflow-y: auto;
+}
+
+.pbody h2 {
+  font-size: 28px;
+  margin-bottom: 18px;
+}
+
+/* ======================================================
+   HOME
+====================================================== */
+.home-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.home-hero {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.home-hero h2 {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.home-hero p {
+  font-size: 16px;
+  color: var(--text-muted);
+  max-width: 750px;
+  margin: auto;
+}
+
+.home-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+.feature-card {
+  background: var(--bg-surface);
+  padding: 30px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+.feature-card h3 {
+  margin-bottom: 8px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* ======================================================
+   ABOUT
+====================================================== */
+.about-hospital {
+  max-width: 1000px;
+  margin: auto;
+
+}
+
+.about-hospital h3 {
+  margin-top: 32px;
+  color: var(--primary-dark);
+}
+
+.intro {
+  font-size: 16px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.about-img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  margin: 24px 0;
+}
+
+.services-list li {
+  margin-bottom: 10px;
+  color: var(--text-muted);
+}
+
+/* ======================================================
+   DEPARTMENTS
+====================================================== */
+.departments {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.dept-intro {
+  color: var(--text-muted);
+  margin-bottom: 30px;
+}
+
+.dept-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+.dept-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.dept-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.dept-card h3 {
+  margin: 16px;
+}
+
+.dept-card p {
+  margin: 0 16px 20px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* ======================================================
+   DOCTORS
+====================================================== */
+.doctors {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.doctor-intro {
+  color: var(--text-muted);
+  margin-bottom: 30px;
+}
+
+.doctor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+}
+
+.doctor-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  text-align: center;
+  width: 275px;
+}
+
+.doctor-card img {
+  width: 70%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.doctor-card h3 {
+  margin: 14px 0 4px;
+}
+
+.doctor-card p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  
+}
+
+/* ======================================================
+   CONTACT
+====================================================== */
+.contact {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.contact-intro {
+  color: var(--text-muted);
+  margin-bottom: 30px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+}
+
+.contact-info p {
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.contact-form form {
+  background: var(--bg-surface);
+  padding: 28px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  margin-bottom: 14px;
+}
+
+.contact-form button {
+  padding: 12px;
+  background: var(--primary);
+  color: #042f2e;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ======================================================
+   AUTH
+====================================================== */
+.auth-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.auth-container {
+  width: 380px;
+  background: var(--bg-surface);
+  padding: 36px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.auth-form input,
+.auth-form select {
+  width: 100%;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  margin-bottom: 14px;
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary);
+  color: #042f2e;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+}
+
+.switch-auth {
+  text-align: center;
+  margin-top: 14px;
+  font-size: 14px;
+}
+
+.switch-auth span {
+  color: var(--primary-dark);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ======================================================
+   FOOTER
+====================================================== */
+.footer {
+  grid-area: footer;
+  background: var(--bg-header);
+  color: #99f6e4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+   
+}
+
+.admin-dashboard {
+  padding: 25px;
+}
+
+.dashboard-subtitle {
+  color: gray;
+  margin-bottom: 20px;
+}
+
+.dashboard-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.dashboard-card {
+  background: white;
+  padding: 20px;
+  width: 220px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.dashboard-number {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.dashboard-label {
+  color: gray;
+  font-size: 14px;
+}
+
+.dashboard-section {
+  margin-top: 30px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
